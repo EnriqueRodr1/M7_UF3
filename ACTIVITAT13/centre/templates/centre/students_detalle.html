@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Detall Alumne</title>
+</head>
+<body>
+    <h1>Detalls de l'Alumne</h1>
+    <p><strong>ID:</strong> {{ student.id }}</p>
+    <p><strong>Nom:</strong> {{ student.first_name }}</p>
+    <p><strong>Cognoms:</strong> {{ student.last_name1 }} {{ student.last_name2 }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Curs:</strong> {{ student.course }}</p>
+    <p><strong>Mòduls:</strong> {{ student.modules }}</p>
+    <a href="{% url 'students' %}">← Tornar a la llista</a>
+</body>
+</html>

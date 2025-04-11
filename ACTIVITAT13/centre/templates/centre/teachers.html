@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Professorat</title>
+    <meta charset="UTF-8">
+    <title>Professorat TIC Barcelona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #ecf0f1;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>NOM</th>
-            <th>COGNOM</th>
-            <th>EMAIL</th>
-            <th>CURS</th>
-            <th>TUTOR</th>
+            <th>INFO</th>
         </tr>
         {% for teacher in teachers %}
         <tr>
             <td>{{ teacher.id }}</td>
             <td>{{ teacher.first_name }}</td>
-            <td>{{ teacher.last_name1 }} {{ teacher.last_name2 }}</td>
-            <td>{{ teacher.email }}</td>
-            <td>{{ teacher.courses }}</td>
-            <td>{% if teacher.tutor %}Sí{% else %}No{% endif %}</td>
+            <td><a href="{% url 'teachers_detalle' teacher.id %}">Detall</a></td>
         </tr>
         {% endfor %}
     </table>
-    <a href="{% url 'index' %}">Tornar</a>
+    <a href="{% url 'index' %}">← Tornar a l'inici</a>
 </body>
 </html>

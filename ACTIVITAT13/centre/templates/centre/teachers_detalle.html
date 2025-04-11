@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Detall Professor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalls del Professor</h1>
+    <p><strong>ID:</strong> {{ teacher.id }}</p>
+    <p><strong>Nom:</strong> {{ teacher.first_name }}</p>
+    <p><strong>Cognoms:</strong> {{ teacher.last_name1 }} {{ teacher.last_name2 }}</p>
+    <p><strong>Email:</strong> {{ teacher.email }}</p>
+    <p><strong>Cursos:</strong> {{ teacher.courses }}</p>
+    <p><strong>Tutor:</strong> {% if teacher.tutor %}Sí{% else %}No{% endif %}</p>
+    <a href="{% url 'teachers' %}">← Tornar a la llista</a>
+</body>
+</html>

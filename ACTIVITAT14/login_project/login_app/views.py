@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm
 from .models import Usuari
 
-def login_view(request):  # 👈 nombre exacto requerido
+def login_view(request):
     error = ""
     if request.method == "POST":
         form = LoginForm(request.POST)
